@@ -34,21 +34,6 @@ const data = [
     question: "Who wrote 'Romeo and Juliet'?",
     answer: "William Shakespeare",
   },
-  {
-    id: 8,
-    question: "What is the currency of Japan?",
-    answer: "Japanese Yen",
-  },
-  {
-    id: 9,
-    question: "What is the speed of light?",
-    answer: "299,792 kilometers per second",
-  },
-  {
-    id: 10,
-    question: "What is the capital of Australia?",
-    answer: "Canberra",
-  },
 ];
 
 export default data;
