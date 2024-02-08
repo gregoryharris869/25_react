@@ -1,10 +1,13 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .active {
-  color: #fff700;
+  color: #fde047;
 }
 
 .inactive {
-  color: #000000;
+  color: #18181b;
 }
-/* .App {
-  text-align: center;
-} */

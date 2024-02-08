@@ -7,7 +7,7 @@ function App() {
     <>
       {/* <Accordion /> */}
       {/* <RandomColor /> */}
-      <StarRating />
+      <StarRating noOfStars={5} />
     </>
   );
 }
