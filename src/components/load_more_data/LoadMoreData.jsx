@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import "./styles.css";
 
-const LoadMoreData = () => {
+export default function LoadMoreData() {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
+  const [disableButton, setDisableButton] = useState(false);
 
   async function fetchProducts() {
     try {
@@ -14,31 +16,40 @@ const LoadMoreData = () => {
           count === 0 ? 0 : count * 20
         }`
       );
+
       const result = await response.json();
+
       if (result && result.products && result.products.length) {
-        setProducts(result.products);
+        setProducts((prevData) => [...prevData, ...result.products]);
         setLoading(false);
       }
+
       console.log(result);
-    } catch (err) {
-      console.log(err);
+    } catch (e) {
+      console.log(e);
       setLoading(false);
     }
   }
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [count]);
+
+  useEffect(() => {
+    if (products && products.length === 100) setDisableButton(true);
+  }, [products]);
 
   if (loading) {
-    return <div>Loading data. Please wait.</div>;
+    return <div>Loading data ! Please wait.</div>;
   }
+
   return (
     <div className="load-more-container">
       <div className="product-container">
         {products && products.length
-          ? products.map((item) => (
-              <div className="product" key={item.id}>
+          ? products.map((item, index) => (
+              <div className="product" key={`${item.id}-${index}`}>
                 <img src={item.thumbnail} alt={item.title} />
                 <p>{item.title}</p>
               </div>
@@ -46,10 +57,11 @@ const LoadMoreData = () => {
           : null}
       </div>
       <div className="button-container">
-        <button>Load More Products</button>
+        <button disabled={disableButton} onClick={() => setCount(count + 1)}>
+          Load More Products
+        </button>
+        {disableButton ? <p>You have reached to 100 products</p> : null}
       </div>
     </div>
   );
-};
-
-export default LoadMoreData;
+}
