@@ -4,6 +4,9 @@
 // import ImageSlider from "./components/image_slider/ImageSlider";
 // import LoadMoreData from "./components/load_more_data/LoadMoreData";
 
+import TreeView from "./components/tree_view/TreeView";
+import menus from "./components/tree_view/data";
+
 function App() {
   return (
     <>
@@ -20,6 +23,8 @@ function App() {
       /> */}
 
       {/* <LoadMoreData /> */}
+
+      <TreeView menus={menus} />
     </>
   );
 }
