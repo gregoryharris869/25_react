@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 const TreeView = ({ menus = [] }) => {
   return (
-    <div className="tree-view-container">
+    <section className="tree-view-container">
       <MenuList list={menus} />
-    </div>
+    </section>
   );
 };
 
