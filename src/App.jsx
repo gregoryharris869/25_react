@@ -7,6 +7,8 @@
 // import menus from "./components/tree_view/data";
 // import QrCodeGenerator from "./components/qr_code_generator/QrCodeGenerator";
 
+import LightDarkMode from "./components/light_dark_theme/LightDarkMode";
+
 function App() {
   return (
     <>
@@ -27,6 +29,8 @@ function App() {
       {/* <TreeView menus={menus} /> */}
 
       {/* <QrCodeGenerator /> */}
+
+      <LightDarkMode />
     </>
   );
 }
