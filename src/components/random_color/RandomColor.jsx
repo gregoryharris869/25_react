@@ -1,83 +1,58 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
+import "./style.css";
+
+const hex = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+function randomColorUtility(length) {
+  return Math.floor(Math.random() * length);
+}
 
 export default function RandomColor() {
+  const effectRan = useRef(false);
   const [typeOfColor, setTypeOfColor] = useState("hex");
   const [color, setColor] = useState("#000000");
 
-  function randomColorUtility(length) {
-    return Math.floor(Math.random() * length);
-  }
-
-  function handleCreateRandomHexColor() {
-    const hex = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+  const handleCreateRandomHexColor = useCallback(() => {
     let hexColor = "#";
 
     for (let i = 0; i < 6; i++) {
       hexColor += hex[randomColorUtility(hex.length)];
     }
     setColor(hexColor);
-  }
+  }, []);
 
-  function handleCreateRandomRgbColor() {
+  const handleCreateRandomRgbColor = useCallback(() => {
     const r = randomColorUtility(256);
     const g = randomColorUtility(256);
     const b = randomColorUtility(256);
 
-    setColor(`rgb(${r}, ${g}, ${b})`);
-  }
+    setColor(`rgb(${r},${g}, ${b})`);
+  }, []);
 
   useEffect(() => {
-    if (typeOfColor === "rgb") handleCreateRandomRgbColor();
-    else handleCreateRandomHexColor();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [typeOfColor]);
-
-  const btnStyle = {
-    padding: "10px 20px",
-    background: "#64748b",
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: "20px",
-    cursor: "pointer",
-  };
+    if (!effectRan.current) {
+      if (typeOfColor === "rgb") handleCreateRandomRgbColor();
+      else handleCreateRandomHexColor();
+    }
+  }, [typeOfColor, handleCreateRandomRgbColor, handleCreateRandomHexColor]);
 
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        background: color,
-        textAlign: "center",
-      }}
-    >
-      <button style={btnStyle} onClick={() => setTypeOfColor("hex")}>
-        Create HEX Color
-      </button>
-      <button style={btnStyle} onClick={() => setTypeOfColor("rgb")}>
-        Create RGB Color
-      </button>
-      <button
-        style={btnStyle}
-        onClick={
-          typeOfColor === "hex"
-            ? handleCreateRandomHexColor
-            : handleCreateRandomRgbColor
-        }
-      >
-        Generate Random Color
-      </button>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "#fff",
-          fontSize: "60px",
-          marginTop: "50px",
-          flexDirection: "column",
-          gap: "20px",
-        }}
-      >
+    <div className="container" style={{ background: color }}>
+      <div className="btnGroup">
+        <button onClick={() => setTypeOfColor("hex")}>Create HEX Color</button>
+        <button onClick={() => setTypeOfColor("rgb")}>Create RGB Color</button>
+        <button
+          onClick={
+            typeOfColor === "hex"
+              ? handleCreateRandomHexColor
+              : handleCreateRandomRgbColor
+          }
+        >
+          Generate Random Color
+        </button>
+      </div>
+
+      <div className="button-container">
         <h3>{typeOfColor === "rgb" ? "RGB Color" : "HEX Color"}</h3>
         <h1>{color}</h1>
       </div>

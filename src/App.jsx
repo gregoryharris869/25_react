@@ -1,5 +1,5 @@
 // import Accordion from "./components/accordion/Accordion";
-// import RandomColor from "./components/random_color/RandomColor";
+import RandomColor from "./components/random_color/RandomColor";
 // import StarRating from "./components/star_rating/StarRating";
 // import ImageSlider from "./components/image_slider/ImageSlider";
 // import LoadMoreData from "./components/load_more_data/LoadMoreData";
@@ -8,14 +8,14 @@
 // import QrCodeGenerator from "./components/qr_code_generator/QrCodeGenerator";
 // import LightDarkMode from "./components/light_dark_theme/LightDarkMode";
 
-import ScrollIndicator from "./components/scroll_indicator/ScrollIndicator";
+// import ScrollIndicator from "./components/scroll_indicator/ScrollIndicator";
 
 function App() {
   return (
     <>
       {/* <Accordion /> */}
 
-      {/* <RandomColor /> */}
+      <RandomColor />
 
       {/* <StarRating noOfStars={5} /> */}
 
@@ -33,7 +33,7 @@ function App() {
 
       {/* <LightDarkMode /> */}
 
-      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+      {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
     </>
   );
 }

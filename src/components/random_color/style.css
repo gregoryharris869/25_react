@@ -1,0 +1,36 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnGroup button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 10px; /* Adjust margin as needed */
+}
+
+.btnGroup button:hover {
+  background-color: #0056b3;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 60px;
+  margin-top: 50px;
+  flex-direction: column;
+  gap: 20px;
+}
