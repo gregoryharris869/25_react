@@ -6,8 +6,9 @@
 // import TreeView from "./components/tree_view/TreeView";
 // import menus from "./components/tree_view/data";
 // import QrCodeGenerator from "./components/qr_code_generator/QrCodeGenerator";
-
 // import LightDarkMode from "./components/light_dark_theme/LightDarkMode";
+
+import ScrollIndicator from "./components/scroll_indicator/ScrollIndicator";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
       {/* <QrCodeGenerator /> */}
 
       {/* <LightDarkMode /> */}
+
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
     </>
   );
 }
