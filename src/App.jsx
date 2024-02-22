@@ -7,8 +7,9 @@
 // import menus from "./components/tree_view/data";
 // import QrCodeGenerator from "./components/qr_code_generator/QrCodeGenerator";
 // import LightDarkMode from "./components/light_dark_theme/LightDarkMode";
+// import TabTest from "./components/custom_tabs/TabTest";
 
-import TabTest from "./components/custom_tabs/TabTest";
+import ModalTest from "./components/custom_modal_popup/ModalTest";
 
 // import ScrollIndicator from "./components/scroll_indicator/ScrollIndicator";
 
@@ -37,7 +38,9 @@ function App() {
 
       {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
 
-      <TabTest />
+      {/* <TabTest /> */}
+
+      <ModalTest />
     </>
   );
 }
