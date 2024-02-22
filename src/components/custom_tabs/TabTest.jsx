@@ -1,15 +1,16 @@
 import Tabs from "./Tabs";
 import "./style.css";
 
-function RandomComponent() {
-  return (
+const RandomComponent = () => (
+  <>
     <h3>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste est
-      blanditiis a magni ipsa? Sit debitis hic, rerum optio inventore aut ad
-      iste, mollitia quo consequatur ex quos laudantium unde!
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus
+      enim ipsum quaerat, ea sequi autem totam optio incidunt perferendis
+      consequuntur veniam in recusandae ullam est sapiente. Autem asperiores
+      expedita illo.
     </h3>
-  );
-}
+  </>
+);
 
 const TabTest = () => {
   const tabs = [
