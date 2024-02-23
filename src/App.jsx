@@ -8,10 +8,8 @@
 // import QrCodeGenerator from "./components/qr_code_generator/QrCodeGenerator";
 // import LightDarkMode from "./components/light_dark_theme/LightDarkMode";
 // import TabTest from "./components/custom_tabs/TabTest";
-
-import ModalTest from "./components/custom_modal_popup/ModalTest";
-
 // import ScrollIndicator from "./components/scroll_indicator/ScrollIndicator";
+// import ModalTest from "./components/custom_modal_popup/ModalTest";
 
 function App() {
   return (
@@ -40,7 +38,7 @@ function App() {
 
       {/* <TabTest /> */}
 
-      <ModalTest />
+      {/* <ModalTest /> */}
     </>
   );
 }
