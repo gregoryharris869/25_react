@@ -11,6 +11,8 @@
 // import ScrollIndicator from "./components/scroll_indicator/ScrollIndicator";
 // import ModalTest from "./components/custom_modal_popup/ModalTest";
 
+import GithubProfile from "./components/github_profile_finder/GithubProfile";
+
 function App() {
   return (
     <>
@@ -39,6 +41,8 @@ function App() {
       {/* <TabTest /> */}
 
       {/* <ModalTest /> */}
+
+      <GithubProfile />
     </>
   );
 }
